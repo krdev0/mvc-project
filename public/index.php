@@ -1,1 +1,1 @@
-<h1>Hello!</h1>
+<?php require_once '../app/bootstrap.php';
