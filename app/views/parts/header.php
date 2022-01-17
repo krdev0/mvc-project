@@ -15,4 +15,3 @@
         <?php require APPROOT . '/views/parts/navbar.php'; ?>
     </header>
     <main>
-        <div class="container">

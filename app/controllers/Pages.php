@@ -8,7 +8,10 @@ class Pages extends Controller
 
     public function index()
     {
-        $data = ['title' => 'Homepage'];
+        $data = [
+            'title' => 'Homepage',
+            'summary' => 'Custom site built on my framework'
+        ];
 
         $this->view('pages/index', $data);
     }
