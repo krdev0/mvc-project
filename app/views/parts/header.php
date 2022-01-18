@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="bg-light">
         <?php require APPROOT . '/views/parts/navbar.php'; ?>
     </header>
     <main>

@@ -13,8 +13,8 @@
             </ul>
 
             <div class="text-end">
-                <button type="button" class="btn me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
+                <button type="button" class="btn me-2"><a class="text-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Login</a></button>
+                <button type="button" class="btn btn-warning"><a class="text-secondary" href="<?php echo URLROOT . '/users/register'; ?>">Sign-up</a></button>
             </div>
         </div>
     </div>

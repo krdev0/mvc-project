@@ -1,25 +1,40 @@
 <?php require APPROOT . '/views/parts/header.php'; ?>
 
 <main class="form-signin" style="max-width: 420px; margin:100px auto 100px;">
-    <form>
-        <h1 class="h3 mb-3 fw-normal">Create an account</h1>
-
-        <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" autocomplete="off">
-            <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" autocomplete="off">
-            <label for="floatingPassword">Password</label>
+    <form action="<?php echo URLROOT . '/users/register'; ?>" method="POST">
+        <h1>Register</h1>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control <?php echo (!empty($data['name_err'])) ? 'is-invalid' : '';  ?> " id="name" value="<?php echo $data['name']; ?>" aria-describedby="nameHelp">
+            <span class="invalid-feedback"><?php echo $data['name_err']; ?></span>
         </div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : '';  ?> " id="email" value="<?php echo $data['email']; ?>" aria-describedby="emailHelp">
+            <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : '';  ?> " id="password" value="<?php echo $data['password']; ?>" aria-describedby="passwordHelp">
+            <span class="invalid-feedback"><?php echo $data['password_err']; ?></span>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($data['confirm_password_err'])) ? 'is-invalid' : '';  ?> " id="confirm_password" value="<?php echo $data['confirm_password']; ?>" aria-describedby="confirm_passwordHelp">
+            <span class="invalid-feedback"><?php echo $data['confirm_password_err']; ?></span>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <input type="submit" value="Register" class="btn btn-success btn-block">
+            </div>
+            <div class="col">
+                <a href="<?php echo URLROOT . '/users/login'; ?>" class="btn btn-light btn-block">Have an account? Login</a>
+            </div>
+        </div>
     </form>
 </main>
 <?php require APPROOT . '/views/parts/footer.php'; ?>
