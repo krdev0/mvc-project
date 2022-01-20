@@ -54,7 +54,10 @@ class Users extends Controller
 
             //Make sure errors are empty
             if (empty($data['email_err']) && empty($data['password_err']) && empty($data['confirm_password_err']) && empty($data['name_err'])) {
-                die('success');
+                // If all errors are empty were good to go 
+
+                //Hash password
+                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
             } else {
                 //Load view with errors
                 $this->view('/users/register', $data);
