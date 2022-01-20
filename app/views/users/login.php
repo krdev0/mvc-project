@@ -2,6 +2,7 @@
 
 <main class="form-signin" style="max-width: 420px; margin:100px auto 100px;">
     <form action="<?php echo URLROOT . '/users/login'; ?>" method="POST">
+        <?php flash('register_success'); ?>
         <h1>Login</h1>
         <div class="form-group">
             <label for="email">Email</label>
