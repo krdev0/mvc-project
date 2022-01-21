@@ -1,5 +1,5 @@
 <header class="p-3">
-    <div class="container-fluid"> 
+    <div class="container-fluid">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
@@ -13,8 +13,12 @@
             </ul>
 
             <div class="text-end">
-                <button type="button" class="btn me-2"><a class="text-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Login</a></button>
-                <button type="button" class="btn btn-warning"><a class="text-secondary" href="<?php echo URLROOT . '/users/register'; ?>">Sign-up</a></button>
+                <?php if (isset($_SESSION['user_id'])) : ?>
+                    <button type="button" class="btn me-2"><a class="text-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Add Product</a></button>
+                <?php else : ?>
+                    <button type="button" class="btn me-2"><a class="text-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Login</a></button>
+                    <button type="button" class="btn btn-warning"><a class="text-secondary" href="<?php echo URLROOT . '/users/register'; ?>">Sign-up</a></button>
+                <?php endif; ?>
             </div>
         </div>
     </div>
