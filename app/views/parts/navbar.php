@@ -14,7 +14,7 @@
 
             <div class="text-end">
                 <?php if (isset($_SESSION['user_id'])) : ?>
-                    <button type="button" class="btn me-2"><a class="text-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Add Product</a></button>
+                    <button type="button" class="btn me-2"><a class="text-secondary" href="<?php echo URLROOT . '/users/logout'; ?>">Logout</a></button>
                 <?php else : ?>
                     <button type="button" class="btn me-2"><a class="text-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Login</a></button>
                     <button type="button" class="btn btn-warning"><a class="text-secondary" href="<?php echo URLROOT . '/users/register'; ?>">Sign-up</a></button>
